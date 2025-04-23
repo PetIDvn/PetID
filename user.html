@@ -2,29 +2,45 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khảo sát người nuôi thú cưng</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       padding: 20px;
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
     }
-    label {
-      font-weight: bold;
-      margin-top: 10px;
-      display: block;
+    h1 {
+      color: #4CAF50;
+      text-align: center;
     }
-    input, textarea, select {
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea, select {
       width: 100%;
-      margin: 5px 0 15px;
-      padding: 8px;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
     button {
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #4CAF50;
       color: white;
-      padding: 10px 20px;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
     button:hover {
@@ -33,84 +49,39 @@
   </style>
 </head>
 <body>
+  <h1>Khảo sát người nuôi thú cưng</h1>
+  <form action="#" method="post">
+    <label for="name">Họ và tên (tuỳ chọn):</label>
+    <input type="text" id="name" name="name">
 
-  <h1>📋 Khảo sát dành cho người nuôi thú cưng</h1>
-
-  <form name="pet-owner-survey" method="POST" data-netlify="true">
-    <label>1. Bạn đang nuôi thú cưng nào?</label>
-    <input type="checkbox" name="pet_type" value="Chó"> Chó<br>
-    <input type="checkbox" name="pet_type" value="Mèo"> Mèo<br>
-    <input type="checkbox" name="pet_type" value="Khác"> Khác<br><br>
-
-    <label>2. Vấn đề bạn gặp phải khi nuôi thú cưng?</label>
-    <textarea name="problems" rows="4" required></textarea>
-
-    <label>3. Bạn thường đưa thú cưng đi khám ở đâu?</label>
-    <select name="visit_place" required>
+    <label for="pet_type">Bạn đang nuôi thú cưng gì?</label>
+    <select id="pet_type" name="pet_type">
       <option value="">-- Chọn --</option>
-      <option value="Phòng khám tư nhân">Phòng khám tư nhân</option>
-      <option value="Bệnh viện thú y">Bệnh viện thú y</option>
-      <option value="Tự chăm sóc tại nhà">Tự chăm sóc tại nhà</option>
+      <option value="dog">Chó</option>
+      <option value="cat">Mèo</option>
+      <option value="other">Khác</option>
     </select>
 
-    <label>4. Khó khăn khi đưa thú cưng đi khám?</label>
-    <textarea name="visit_difficulty" rows="3"></textarea>
+    <label for="difficulties">Khó khăn bạn gặp phải khi nuôi thú cưng?</label>
+    <textarea id="difficulties" name="difficulties" rows="4"></textarea>
 
-    <label>5. Bạn đang quản lý thông tin thú cưng bằng cách nào?</label>
-    <select name="management" required>
-      <option value="">-- Chọn --</option>
-      <option value="Nhớ trong đầu">Nhớ trong đầu</option>
-      <option value="Ghi giấy/sổ tay">Ghi giấy/sổ tay</option>
-      <option value="Ghi chú điện thoại">Ghi chú điện thoại</option>
-      <option value="Chưa quản lý gì cả">Chưa quản lý gì cả</option>
-    </select>
+    <label for="clinic_experience">Trải nghiệm của bạn khi đưa thú cưng đến phòng khám thú y?</label>
+    <textarea id="clinic_experience" name="clinic_experience" rows="4"></textarea>
 
-    <label>6. Bạn muốn nền tảng hỗ trợ có tính năng gì?</label>
-    <input type="checkbox" name="features" value="Hồ sơ thú cưng"> Hồ sơ thú cưng<br>
-    <input type="checkbox" name="features" value="Nhắc lịch"> Nhắc lịch chăm sóc<br>
-    <input type="checkbox" name="features" value="Kết nối dịch vụ"> Kết nối phòng khám/spa<br>
-    <input type="checkbox" name="features" value="PetTag"> PetTag định danh<br>
-    <input type="checkbox" name="features" value="Khác"> Khác<br><br>
+    <label for="management">Bạn quản lý thông tin thú cưng như thế nào?</label>
+    <textarea id="management" name="management" rows="3"></textarea>
 
-    <label>7. Bạn có muốn quản lý thú cưng **mọi lúc mọi nơi** qua app không?</label>
-    <select name="manage_anywhere">
-      <option value="">-- Chọn --</option>
-      <option value="Rất cần">Rất cần</option>
-      <option value="Có cũng tốt">Có cũng tốt</option>
-      <option value="Không quan trọng">Không quan trọng</option>
-    </select>
+    <label for="features">Bạn muốn nền tảng hỗ trợ có tính năng gì?</label>
+    <input type="checkbox" name="features" value="always_with_pet"> Luôn mang thú cưng bên mình qua ứng dụng<br>
+    <input type="checkbox" name="features" value="service_time_reduction"> Rút ngắn thời gian tìm và sử dụng dịch vụ<br>
+    <input type="checkbox" name="features" value="pet_info_transparency"> Minh bạch thông tin thú cưng<br>
+    <input type="checkbox" name="features" value="find_nearby_services"> Tìm được thú y/dịch vụ gần nhất và uy tín<br>
+    <input type="checkbox" name="features" value="protect_pet_owners"> Hỗ trợ và bảo vệ quyền lợi người nuôi thú cưng<br>
 
-    <label>8. Bạn muốn **rút ngắn thời gian** khi dùng dịch vụ thú cưng như thế nào?</label>
-    <textarea name="optimize_time" rows="3"></textarea>
-
-    <label>9. Bạn có mong muốn hồ sơ thú cưng được **minh bạch, rõ ràng** trên nền tảng không?</label>
-    <select name="data_transparency">
-      <option value="">-- Chọn --</option>
-      <option value="Rất cần thiết">Rất cần thiết</option>
-      <option value="Có cũng tốt">Có cũng tốt</option>
-      <option value="Không cần thiết">Không cần thiết</option>
-    </select>
-
-    <label>10. Bạn có nhu cầu tìm **dịch vụ gần nhất & uy tín** qua app không?</label>
-    <select name="find_nearby_services">
-      <option value="">-- Chọn --</option>
-      <option value="Có">Có</option>
-      <option value="Không">Không</option>
-    </select>
-
-    <label>11. Bạn có mong muốn nền tảng **bảo vệ người nuôi thú cưng** (đánh giá dịch vụ, cảnh báo lừa đảo)?</label>
-    <select name="user_protection">
-      <option value="">-- Chọn --</option>
-      <option value="Rất cần thiết">Rất cần thiết</option>
-      <option value="Tùy tình huống">Tùy tình huống</option>
-      <option value="Không cần">Không cần</option>
-    </select><br><br>
-
-    <label>Email của bạn (nếu muốn nhận thông tin):</label>
-    <input type="email" name="email">
+    <label for="more">Bạn còn mong muốn điều gì khác?</label>
+    <textarea id="more" name="more" rows="3"></textarea>
 
     <button type="submit">Gửi khảo sát</button>
   </form>
-
 </body>
 </html>
