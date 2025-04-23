@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khảo sát người nuôi thú cưng</title>
+</head>
+<body>
+  <h1>📋 Khảo sát dành cho người nuôi thú cưng</h1>
+
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <label>1. Bạn hiện đang nuôi thú cưng nào?</label><br>
+    <input type="checkbox" name="thu_cung" value="cho"> Chó<br>
+    <input type="checkbox" name="thu_cung" value="meo"> Mèo<br>
+    <input type="checkbox" name="thu_cung" value="khac"> Khác<br><br>
+
+    <label>2. Vấn đề bạn gặp phải khi nuôi thú cưng?</label><br>
+    <textarea name="van_de_gap_phai" rows="4" required></textarea><br><br>
+
+    <label>3. Bạn thường khám thú cưng ở đâu?</label><br>
+    <select name="kham_o_dau" required>
+      <option value="">-- Chọn --</option>
+      <option value="phong_kham_tu_nhan">Phòng khám thú y tư nhân</option>
+      <option value="benh_vien_thu_y">Bệnh viện thú y</option>
+      <option value="tu_cham_soc">Tự chăm sóc tại nhà</option>
+    </select><br><br>
+
+    <label>4. Bạn gặp khó khăn gì khi đưa thú cưng đi khám?</label><br>
+    <textarea name="kho_khan_khi_kham" rows="3"></textarea><br><br>
+
+    <label>5. Bạn đang quản lý thông tin thú cưng như thế nào?</label><br>
+    <select name="quan_ly_thu_cung" required>
+      <option value="">-- Chọn --</option>
+      <option value="nho_trong_dau">Nhớ trong đầu</option>
+      <option value="viet_giay">Ghi giấy/sổ tay</option>
+      <option value="ghi_nho_dien_thoai">Ghi trong điện thoại</option>
+      <option value="chua_he_quan_ly">Chưa hề quản lý</option>
+    </select><br><br>
+
+    <label>6. Bạn mong muốn nền tảng hỗ trợ nuôi thú cưng có tính năng gì?</label><br>
+    <input type="checkbox" name="tinh_nang" value="ho_so_thu_cung"> Hồ sơ thú cưng<br>
+    <input type="checkbox" name="tinh_nang" value="nhac_lich"> Nhắc lịch khám/chăm sóc<br>
+    <input type="checkbox" name="tinh_nang" value="ket_noi_dich_vu"> Kết nối với spa/phòng khám<br>
+    <input type="checkbox" name="tinh_nang" value="pet_tag"> PetTag định danh<br>
+    <input type="checkbox" name="tinh_nang" value="khac"> Khác<br><br>
+
+    <label>7. Email của bạn (tùy chọn, nếu muốn nhận cập nhật):</label><br>
+    <input type="email" name="email"><br><br>
+
+    <button type="submit">Gửi khảo sát</button>
+  </form>
+
+</body>
+</html>
