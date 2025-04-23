@@ -7,81 +7,96 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
+      margin: 0;
       padding: 20px;
+    }
+    .container {
       max-width: 800px;
       margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     h1 {
-      color: #4CAF50;
       text-align: center;
-    }
-    form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      color: #2c3e50;
     }
     label {
+      font-weight: bold;
       display: block;
       margin-top: 15px;
-      font-weight: bold;
     }
-    input[type="text"], textarea, select {
+    input[type="text"],
+    textarea,
+    select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border-radius: 5px;
       border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    .checkbox-group {
+      margin-top: 10px;
     }
     button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #4CAF50;
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 25px;
+      background-color: #27ae60;
       color: white;
       border: none;
       border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #45a049;
+      background-color: #219150;
     }
   </style>
 </head>
 <body>
-  <h1>Khảo sát người nuôi thú cưng</h1>
-  <form action="#" method="post">
-    <label for="name">Họ và tên (tuỳ chọn):</label>
-    <input type="text" id="name" name="name">
+  <div class="container">
+    <h1>Khảo sát người nuôi thú cưng</h1>
+    <form>
+      <label for="name">Họ và tên (tuỳ chọn):</label>
+      <input type="text" id="name" name="name">
 
-    <label for="pet_type">Bạn đang nuôi thú cưng gì?</label>
-    <select id="pet_type" name="pet_type">
-      <option value="">-- Chọn --</option>
-      <option value="dog">Chó</option>
-      <option value="cat">Mèo</option>
-      <option value="other">Khác</option>
-    </select>
+      <label for="pet_type">Bạn đang nuôi thú cưng gì?</label>
+      <select id="pet_type" name="pet_type">
+        <option value="">-- Chọn --</option>
+        <option value="dog">Chó</option>
+        <option value="cat">Mèo</option>
+        <option value="other">Khác</option>
+      </select>
 
-    <label for="difficulties">Khó khăn bạn gặp phải khi nuôi thú cưng?</label>
-    <textarea id="difficulties" name="difficulties" rows="4"></textarea>
+      <label for="difficulties">Khó khăn bạn gặp phải khi nuôi thú cưng?</label>
+      <textarea id="difficulties" name="difficulties" rows="4"></textarea>
 
-    <label for="clinic_experience">Trải nghiệm của bạn khi đưa thú cưng đến phòng khám thú y?</label>
-    <textarea id="clinic_experience" name="clinic_experience" rows="4"></textarea>
+      <label for="clinic_experience">Trải nghiệm của bạn tại phòng khám thú y?</label>
+      <textarea id="clinic_experience" name="clinic_experience" rows="4"></textarea>
 
-    <label for="management">Bạn quản lý thông tin thú cưng như thế nào?</label>
-    <textarea id="management" name="management" rows="3"></textarea>
+      <label for="management">Bạn hiện đang quản lý thông tin thú cưng như thế nào?</label>
+      <textarea id="management" name="management" rows="3"></textarea>
 
-    <label for="features">Bạn muốn nền tảng hỗ trợ có tính năng gì?</label>
-    <input type="checkbox" name="features" value="always_with_pet"> Luôn mang thú cưng bên mình qua ứng dụng<br>
-    <input type="checkbox" name="features" value="service_time_reduction"> Rút ngắn thời gian tìm và sử dụng dịch vụ<br>
-    <input type="checkbox" name="features" value="pet_info_transparency"> Minh bạch thông tin thú cưng<br>
-    <input type="checkbox" name="features" value="find_nearby_services"> Tìm được thú y/dịch vụ gần nhất và uy tín<br>
-    <input type="checkbox" name="features" value="protect_pet_owners"> Hỗ trợ và bảo vệ quyền lợi người nuôi thú cưng<br>
+      <label>Bạn muốn nền tảng hỗ trợ có tính năng gì?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="features" value="always_with_pet"> Luôn mang thú cưng bên mình qua ứng dụng</label>
+        <label><input type="checkbox" name="features" value="service_time_reduction"> Rút ngắn thời gian tìm và sử dụng dịch vụ</label>
+        <label><input type="checkbox" name="features" value="pet_info_transparency"> Minh bạch thông tin thú cưng</label>
+        <label><input type="checkbox" name="features" value="find_nearby_services"> Tìm được thú y/dịch vụ gần nhất và uy tín</label>
+        <label><input type="checkbox" name="features" value="protect_pet_owners"> Hỗ trợ và bảo vệ quyền lợi người nuôi thú cưng</label>
+      </div>
 
-    <label for="more">Bạn còn mong muốn điều gì khác?</label>
-    <textarea id="more" name="more" rows="3"></textarea>
+      <label for="more">Bạn còn mong muốn điều gì khác?</label>
+      <textarea id="more" name="more" rows="3"></textarea>
 
-    <button type="submit">Gửi khảo sát</button>
-  </form>
+      <button type="submit">Gửi khảo sát</button>
+    </form>
+  </div>
 </body>
 </html>
