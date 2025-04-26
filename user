@@ -7,12 +7,10 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      backdrop-filter: blur(2px);
+      background-color: #fff9f9;
     }
     header {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: #ffffff;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -23,15 +21,7 @@
       z-index: 1000;
     }
     .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
-    .logo-text {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: bold;
       color: #ff6b81;
     }
@@ -78,9 +68,6 @@
     main {
       text-align: center;
       padding: 5rem 2rem;
-      background-color: rgba(255,255,255,0.8);
-      border-radius: 12px;
-      margin: 2rem;
     }
     h1 {
       font-size: 2.7rem;
@@ -94,21 +81,52 @@
       margin: 0 auto;
     }
     footer {
-      background-color: rgba(255,255,255,0.8);
+      background-color: #fef2f2;
       padding: 1rem 2rem;
       text-align: center;
       font-size: 0.95rem;
       color: #888;
       margin-top: 4rem;
     }
+
+    /* --- Quảng cáo chức năng --- */
+    .ads-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .ad-card {
+      background-color: #ffecef;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .ad-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .ad-card h3 {
+      font-size: 1.5rem;
+      color: #ff6b81;
+      margin-bottom: 1rem;
+    }
+
+    .ad-card p {
+      font-size: 1rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="135D5013-A40D-4CAB-8482-D810BFF07385.jpeg" alt="PId Logo">
-      <div class="logo-text">PId</div>
-    </div>
+    <div class="logo">🐾 PId</div>
     <div class="menu">
       <button class="menu-button" onclick="toggleDropdown()">Menu ▾</button>
       <div id="dropdown" class="dropdown-content">
@@ -124,63 +142,25 @@
     <p>Nền tảng kết nối và chăm sóc thú cưng toàn diện tại Việt Nam. Tại đây, bạn có thể tìm kiếm dịch vụ, sản phẩm và cộng đồng cho thú cưng của mình một cách dễ dàng và tiện lợi.</p>
   </main>
 
-
-/* --- Quảng cáo chức năng --- */
-.ads-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.ad-card {
-  background-color: #ffecef;
-  border-radius: 12px;
-  padding: 2rem;
-  width: 260px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.ad-card:hover {
-  transform: translateY(-5px);
-}
-
-.ad-card h3 {
-  font-size: 1.5rem;
-  color: #ff6b81;
-  margin-bottom: 1rem;
-}
-
-.ad-card p {
-  font-size: 1rem;
-  color: #555;
-}
-
-<!-- --- Quảng cáo các chức năng chính --- -->
-<section class="ads-section">
-  <div class="ad-card">
-    <h3>Thông tin</h3>
-    <p>Khám phá PId và những tính năng tuyệt vời giúp bạn chăm sóc thú cưng.</p>
-  </div>
-  <div class="ad-card">
-    <h3>Liên hệ</h3>
-    <p>Kết nối với đội ngũ hỗ trợ của PId để nhận tư vấn tận tình và nhanh chóng.</p>
-  </div>
-  <div class="ad-card">
-    <h3>Tải App</h3>
-    <p>Trải nghiệm nền tảng PId mọi lúc mọi nơi với ứng dụng di động tiện lợi.</p>
-  </div>
-</section>
-
+  <!-- --- Quảng cáo các chức năng chính --- -->
+  <section class="ads-section">
+    <div class="ad-card">
+      <h3>Thông tin</h3>
+      <p>Khám phá PId và những tính năng tuyệt vời giúp bạn chăm sóc thú cưng.</p>
+    </div>
+    <div class="ad-card">
+      <h3>Liên hệ</h3>
+      <p>Kết nối với đội ngũ hỗ trợ của PId để nhận tư vấn tận tình và nhanh chóng.</p>
+    </div>
+    <div class="ad-card">
+      <h3>Tải App</h3>
+      <p>Trải nghiệm nền tảng PId mọi lúc mọi nơi với ứng dụng di động tiện lợi.</p>
+    </div>
+  </section>
 
   <footer>
     © 2025 PId Platform. Tất cả các quyền được bảo lưu.
   </footer>
-
-
 
   <script>
     function toggleDropdown() {
