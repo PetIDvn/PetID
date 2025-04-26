@@ -54,7 +54,7 @@
     .dropdown-content a:hover {
       background-color: #f5f5f5;
     }
-    .show {
+    .dropdown-content.show {
       display: block;
     }
     main {
@@ -92,19 +92,17 @@
 
   <script>
     function toggleDropdown() {
-      document.getElementById("dropdown").classList.toggle("show");
+      const dropdown = document.getElementById("dropdown");
+      dropdown.classList.toggle("show");
     }
-    window.onclick = function(event) {
-      if (!event.target.matches('.menu-button')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
+
+    window.addEventListener("click", function(event) {
+      const isMenuButton = event.target.closest(".menu-button");
+      const dropdown = document.getElementById("dropdown");
+      if (!isMenuButton && dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
       }
-    }
+    });
   </script>
 </body>
 </html>
